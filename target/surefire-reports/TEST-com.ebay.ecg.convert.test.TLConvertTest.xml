@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuite failures="0" time="0.049" errors="0" skipped="0" tests="1" name="com.ebay.ecg.convert.test.TLConvertTest">
+  <properties>
+    <property name="java.vendor" value="IBM Corporation"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="os.name" value="Windows 7"/>
+    <property name="sun.boot.class.path" value="C:\ride-3.0.1\ibm-java-sdk-7.0-4.2-win-x86_64\jre\bin\compressedrefs\jclSC170\vm.jar;C:\ride-3.0.1\ibm-java-sdk-7.0-4.2-win-x86_64\jre\lib\se-service.jar;C:\ride-3.0.1\ibm-java-sdk-7.0-4.2-win-x86_64\jre\lib\math.jar;C:\ride-3.0.1\ibm-java-sdk-7.0-4.2-win-x86_64\jre\lib\jlm.jar;C:\ride-3.0.1\ibm-java-sdk-7.0-4.2-win-x86_64\jre\lib\ibmorb.jar;C:\ride-3.0.1\ibm-java-sdk-7.0-4.2-win-x86_64\jre\lib\ibmorbapi.jar;C:\ride-3.0.1\ibm-java-sdk-7.0-4.2-win-x86_64\jre\lib\ibmcfw.jar;C:\ride-3.0.1\ibm-java-sdk-7.0-4.2-win-x86_64\jre\lib\ibmpkcs.jar;C:\ride-3.0.1\ibm-java-sdk-7.0-4.2-win-x86_64\jre\lib\ibmcertpathfw.jar;C:\ride-3.0.1\ibm-java-sdk-7.0-4.2-win-x86_64\jre\lib\ibmjgssfw.jar;C:\ride-3.0.1\ibm-java-sdk-7.0-4.2-win-x86_64\jre\lib\ibmjssefw.jar;C:\ride-3.0.1\ibm-java-sdk-7.0-4.2-win-x86_64\jre\lib\ibmsaslfw.jar;C:\ride-3.0.1\ibm-java-sdk-7.0-4.2-win-x86_64\jre\lib\ibmjcefw.jar;C:\ride-3.0.1\ibm-java-sdk-7.0-4.2-win-x86_64\jre\lib\ibmjgssprovider.jar;C:\ride-3.0.1\ibm-java-sdk-7.0-4.2-win-x86_64\jre\lib\ibmjsseprovider2.jar;C:\ride-3.0.1\ibm-java-sdk-7.0-4.2-win-x86_64\jre\lib\ibmcertpathprovider.jar;C:\ride-3.0.1\ibm-java-sdk-7.0-4.2-win-x86_64\jre\lib\xmldsigfw.jar;C:\ride-3.0.1\ibm-java-sdk-7.0-4.2-win-x86_64\jre\lib\xml.jar;C:\ride-3.0.1\ibm-java-sdk-7.0-4.2-win-x86_64\jre\lib\charsets.jar;C:\ride-3.0.1\ibm-java-sdk-7.0-4.2-win-x86_64\jre\lib\resources.jar;C:\ride-3.0.1\ibm-java-sdk-7.0-4.2-win-x86_64\jre\lib\rt.jar"/>
+    <property name="sun.desktop" value="windows"/>
+    <property name="java.vm.specification.vendor" value="Sun Microsystems Inc."/>
+    <property name="java.runtime.version" value="pwa6470sr4fp2ifx-20130823_01 (SR4 FP2+IV47453)"/>
+    <property name="user.name" value="doxie"/>
+    <property name="java.compiler" value="j9jit26"/>
+    <property name="os.encoding" value="UTF8"/>
+    <property name="guice.disable.misplaced.annotation.check" value="true"/>
+    <property name="com.ibm.util.extralibs.properties" value=""/>
+    <property name="com.ibm.jcl.checkClassPath" value=""/>
+    <property name="user.language" value="zh"/>
+    <property name="com.ibm.oti.vm.bootstrap.library.path" value="C:\ride-3.0.1\ibm-java-sdk-7.0-4.2-win-x86_64\jre\bin\compressedrefs;C:\ride-3.0.1\ibm-java-sdk-7.0-4.2-win-x86_64\jre\bin"/>
+    <property name="sun.boot.library.path" value="C:\ride-3.0.1\ibm-java-sdk-7.0-4.2-win-x86_64\jre\bin\compressedrefs;C:\ride-3.0.1\ibm-java-sdk-7.0-4.2-win-x86_64\jre\bin"/>
+    <property name="classworlds.conf" value="C:\Users\doxie\ride\workspace\.metadata\.plugins\org.eclipse.m2e.core\launches\m2conf352719598810439669.tmp"/>
+    <property name="java.version" value="1.7.0"/>
+    <property name="user.timezone" value="Asia/Shanghai"/>
+    <property name="com.ibm.system.agent.path" value="C:\ride-3.0.1\ibm-java-sdk-7.0-4.2-win-x86_64\jre\bin"/>
+    <property name="sun.arch.data.model" value="64"/>
+    <property name="com.ibm.zero.version" value="2"/>
+    <property name="java.endorsed.dirs" value="C:\ride-3.0.1\ibm-java-sdk-7.0-4.2-win-x86_64\jre\lib\endorsed"/>
+    <property name="com.ibm.oti.vm.library.version" value="26"/>
+    <property name="sun.jnu.encoding" value="GB18030"/>
+    <property name="file.encoding.pkg" value="sun.io"/>
+    <property name="jxe.current.romimage.version" value="17"/>
+    <property name="file.separator" value="\"/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="java.class.version" value="51.0"/>
+    <property name="user.country" value="CN"/>
+    <property name="java.home" value="C:\ride-3.0.1\ibm-java-sdk-7.0-4.2-win-x86_64\jre"/>
+    <property name="java.vm.info" value="JRE 1.7.0 Windows 7 amd64-64 Compressed References 20130823_162565 (JIT enabled, AOT enabled)
+J9VM - R26_Java726_SR4_FP2_2_20130823_0817_B162565
+JIT  - r11.b03_20130131_32403ifx4
+GC   - R26_Java726_SR4_FP2_2_20130823_0817_B162565_CMPRSS
+J9CL - 20130823_162565"/>
+    <property name="os.version" value="6.1"/>
+    <property name="path.separator" value=";"/>
+    <property name="java.vm.version" value="2.6"/>
+    <property name="user.variant" value=""/>
+    <property name="java.awt.printerjob" value="sun.awt.windows.WPrinterJob"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
+    <property name="awt.toolkit" value="sun.awt.windows.WToolkit"/>
+    <property name="ibm.signalhandling.sigint" value="true"/>
+    <property name="user.home" value="C:\Users\doxie"/>
+    <property name="com.ibm.cpu.endian" value="little"/>
+    <property name="java.specification.vendor" value="Sun Microsystems Inc."/>
+    <property name="ibm.signalhandling.sigchain" value="true"/>
+    <property name="java.library.path" value="C:\ride-3.0.1\ibm-java-sdk-7.0-4.2-win-x86_64\jre\bin\compressedrefs;C:\ride-3.0.1\ibm-java-sdk-7.0-4.2-win-x86_64\jre\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\Users\doxie\android-ndk-r8-crystax-1;C:\jdk1.7.0\bin;C:\groovy-2.0.5\bin;C:\grails-2.1.0\bin;C:\scala-2.9.2\bin;C:\Python27;C:\Users\doxie\git\git-cc;C:\Program Files\Common Files\Microsoft Shared\Windows Live;C:\Program Files (x86)\Common Files\Microsoft Shared\Windows Live;C:\Program Files (x86)\Git\bin;C:\code\Sikuli-on-Selenium\mubbashir-Sikuli-on-Selenium-226bf5f\libs;C:\Sikuli-X-1.0rc3 (r905)-win32\Sikuli-IDE\libs;C:\Ruby193\bin;C:\kijiji\Mobile\Android_src\DE\eBK_android\trunk\dx;C:\Program Files (x86)\RSA SecurID Token Common;C:\Users\doxie\android-sdks\platform-tools;C:\Users\doxie\android-sdks\tools;C:\Program Files (x86)\PHP;C:\Program Files (x86)\PHP\;C:\Perl64\site\bin;C:\Perl64\bin;C:\ride-3.0.1\apache-maven-3.0.5\bin;C:\apache-ant-1.8.2\bin;C:\jdk1.7.0\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\TortoiseSVN\bin;C:\PROGRA~2\F-Secure\SSHTRI~1;C:\Program Files\TortoiseSVN\bin;C:\Program Files (x86)\IBM\RationalSDLC\ClearCase\bin;C:\Program Files (x86)\IBM\RationalSDLC\common;C:\Program Files (x86)\Common Files\Teleca Shared;C:\Go\bin;C:\Program Files (x86)\Windows Live\Shared;C:\Program Files (x86)\Code Collaborator Client;C:\Program Files\Code Collaborator Client;C:\Program Files\TortoiseGit\bin;C:\Program Files (x86)\Git\cmd;C:\Program Files\nodejs\;C:\Program Files\Common Files\Hitachi ID\;C:\Users\doxie\socat-2.0.0-b5;C:\Users\doxie\git\git-review;C:\Program Files (x86)\Sikuli X\libs;bin;C:\Users\doxie\AppData\Roaming\npm;."/>
+    <property name="java.vendor.url" value="http://www.ibm.com/"/>
+    <property name="java.vm.vendor" value="IBM Corporation"/>
+    <property name="java.fullversion" value="JRE 1.7.0 IBM J9 2.6 Windows 7 amd64-64 Compressed References 20130823_162565 (JIT enabled, AOT enabled)
+J9VM - R26_Java726_SR4_FP2_2_20130823_0817_B162565
+JIT  - r11.b03_20130131_32403ifx4
+GC   - R26_Java726_SR4_FP2_2_20130823_0817_B162565_CMPRSS
+J9CL - 20130823_162565"/>
+    <property name="maven.home" value="C:\ride-3.0.1\apache-maven-3.0.5"/>
+    <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
+    <property name="sun.java.command" value="org.codehaus.plexus.classworlds.launcher.Launcher -B -s C:/Users/doxie/.m2/settings.xml install"/>
+    <property name="java.class.path" value="C:\ride-3.0.1\apache-maven-3.0.5\boot\plexus-classworlds-2.4.jar"/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="java.vm.specification.version" value="1.0"/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="java.io.tmpdir" value="C:\Users\doxie\AppData\Local\Temp\"/>
+    <property name="ibm.system.encoding" value="GB18030"/>
+    <property name="os.arch" value="amd64"/>
+    <property name="java.awt.graphicsenv" value="sun.awt.Win32GraphicsEnvironment"/>
+    <property name="ibm.signalhandling.rs" value="false"/>
+    <property name="java.ext.dirs" value="C:\ride-3.0.1\ibm-java-sdk-7.0-4.2-win-x86_64\jre\lib\ext"/>
+    <property name="user.dir" value="C:\Users\doxie\ride\workspace\TLConvert"/>
+    <property name="line.separator" value="
+"/>
+    <property name="java.vm.name" value="IBM J9 VM"/>
+    <property name="com.ibm.oti.shared.enabled" value="false"/>
+    <property name="com.ibm.vm.bitmode" value="64"/>
+    <property name="jxe.lowest.romimage.version" value="17"/>
+    <property name="file.encoding" value="ISO-8859-1"/>
+    <property name="com.ibm.oti.configuration" value="scar"/>
+    <property name="com.ibm.oti.jcl.build" value="20130823_162565"/>
+    <property name="java.specification.version" value="1.7"/>
+  </properties>
+  <testcase time="0.001" classname="com.ebay.ecg.convert.test.TLConvertTest" name="testApp"/>
+</testsuite>
