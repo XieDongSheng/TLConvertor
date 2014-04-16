@@ -1,7 +1,9 @@
 package com.ebay.ecg.convert;
 import java.io.*;
+import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
+import java.util.Map;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -94,8 +96,8 @@ public class CreatExcel {
         		else{
         			int ti[] = new ReadXml().getTime(strFileName);
         			Label label = new Label(i,k,content2);
-        			k = k+ti[j];
         			sheet.addCell(label);
+        			k = k+ti[j-1];
         			}
         		
         			
@@ -103,29 +105,40 @@ public class CreatExcel {
         		}
             	
             	
-            	List li = new ReadXml().getName(strFileName);
+            	List<String> li = new ReadXml().getNameAndKey(strFileName);
             	
             	int ti[] = new ReadXml().getTime(strFileName);
             	int k = 1;
-            	
-    				for(int s =0;s<li.size();s++){
+/*    				for(int s =0;s<li.;s++){
     					System.out.println("00000"+li.get(s));
     					Label label = new Label(0,k,(String)li.get(s));			  				
     					sheet.addCell(label);
     					System.out.println("-----------"+li.get(s)); 
     					System.out.println("********"+ti[s]);
-    					k = k+ti[s+1];
+    					k = k+ti[s];
     					
-    			}
+    			}*/
+    				  for (int s =0;s<li.size();s++) {
+    					   String[] pair = li.get(s).split("::");
+    					   String name = pair[0];
+    					   String keywords = pair[1];
+    					   System.out.println(name);
+    					   System.out.println("key=" + name + " value=" + keywords);
+       					   Label label_name = new Label(0,k,name);			  				
+       					   Label label_keyword = new Label(3,k,keywords);			  				
+       					   sheet.addCell(label_name);
+       					   sheet.addCell(label_keyword);
+       					   k = k+ti[s];
+    					  }
     			
-    			
-    			List lis = new ReadXml().getKey(strFileName);
-            	
+    		/*	List lis = new ReadXml().getKey(strFileName);
+    			k = 1;
     			for(int s =0;s<lis.size();s++){
     				System.out.println("00000"+lis.get(s));
-    				Label label = new Label(3,s+1,(String) lis.get(s));
+    				Label label = new Label(3,k,(String) lis.get(s));
     				sheet.addCell(label);
-    			}
+					k = k+ti[s];
+    			}*/
             book.write();
             book.close();
 			

@@ -4,6 +4,10 @@ import java.util.*;
 
 import org.dom4j.*;
 import org.dom4j.io.*;
+import org.dom4j.tree.ContentListFacade;
+import org.dom4j.tree.DefaultAttribute;
+import org.dom4j.tree.DefaultElement;
+import org.dom4j.tree.DefaultText;
 
 /**
 * 
@@ -20,21 +24,33 @@ class ReadXml{
 
  private File xmlFile;
  
- public List<String> getName(String strFileName) throws DocumentException{
+ public List<String> getNameAndKey(String strFileName) throws DocumentException{
 	 xmlFile=new File(strFileName);      
  	  SAXReader reader=new SAXReader();     
  	  Document xmlDoc;
-	
+
 		xmlDoc = reader.read(xmlFile);
-	 
 		Element root=xmlDoc.getRootElement();
 		List<String> li = new ArrayList<String>();
 		List testcase=xmlDoc.selectNodes("//testcase");
-		
 		for(Iterator i=testcase.iterator();i.hasNext();){
+			String keywords = "";
 			Element ele=(Element)i.next();
+			Element ele_keys = ele.element("keywords");
+			if(ele_keys != null)
+			{
+				List nodes = ele_keys.elements("keyword");		
+				for (Iterator it = nodes.iterator(); it.hasNext();) {  
+					Element elm = (Element) it.next(); 
+					keywords += elm.attribute("name").getValue() + " "; 
+				} 
+			}
+			else
+			{
+				keywords = "None";
+			}
 			System.out.println("Test "+ele.attribute("name").getValue()); 
-			li.add(ele.attribute("name").getValue());
+			li.add(ele.attribute("name").getValue() + "::" + keywords);
 		}
 	 return li;
  }
@@ -48,12 +64,17 @@ class ReadXml{
 	 
  	  Element root=xmlDoc.getRootElement();
  	  List<String> li = new ArrayList<String>();
- 	  List testcase=xmlDoc.selectNodes("//keyword");
- 	  
+ 	  List testcase=xmlDoc.selectNodes("//keywords");
 		for(Iterator i=testcase.iterator();i.hasNext();){
-			Element ele=(Element)i.next();
+			Element ele =(Element)i.next();
+			ContentListFacade keyList = (ContentListFacade)ele.content();
+			String keywords = "";
+			for(int j=0; j < keyList.size(); j+=2){
+				DefaultElement content = (DefaultElement) keyList.get(j);
+				keywords += content.attribute("name").getValue() + " ";
+			} 
 //			System.out.println("Test "+ele.attribute("name").getValue()); 
-			li.add(ele.attribute("name").getValue());
+			li.add(keywords);
 		}
 	 return li;
  }
@@ -72,17 +93,28 @@ class ReadXml{
 		
 		for(Iterator it = step_number.iterator();it.hasNext();){
 			Element ele=(Element)it.next();
+			if(ele.getText().equals("1"))
+				number += "/";
 			number += ele.getText();
-		} 
+		}
+		number = number.replaceFirst("/", "");
 		
 		System.out.println("Output Array size: "+number);
-		String[] num = number.split("1");
+		String[] num = number.split("/");
 		System.out.println("Output Array length: "+num.length);
-		
-		for(int i=1; i<num.length; i++){
-			System.out.println(num[i].length());
-			ti[i] = num[i].length()+1;
-		} 
+/*		if(num.length == 0 && number.length() > 0 && number.contains("1"))
+		{
+			for(int i=1; i<= number.length(); i++){
+ 				ti[i] = 1;
+			}
+		}*/
+/*		else
+		{*/
+			for(int i=0; i<num.length; i++){
+				System.out.println(num[i].length());
+				ti[i] = num[i].length();
+			} 
+		//}
 		return ti;
 			
  }
